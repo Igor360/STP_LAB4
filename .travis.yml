@@ -1,8 +1,6 @@
 ---
 language: java
 
-install: /bin/true
-
 jdk:
 - openjdk6
 - oraclejdk7

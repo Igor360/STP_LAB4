@@ -9,6 +9,7 @@ jdk:
 - oraclejdk8
 
 before_script:
+    - chmod +x gradlew
     - wget https://services.gradle.org/distributions/gradle-4.2-bin.zip
     - unzip gradle-4.2-bin.zip
     - export GRADLE_HOME=$PWD/gradle-4.2

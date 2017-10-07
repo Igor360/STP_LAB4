@@ -18,4 +18,4 @@ script:
 - ./gradlew jacocoTestReport
 
 after_success:
-  - bash <(curl -s https://codecov.io/bash) -t token
+  - bash <(curl -s https://codecov.io/bash) -t 4a2b256e-b29a-4a10-8cfd-e226a5a8a798

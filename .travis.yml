@@ -14,5 +14,5 @@ before_script:
 
 test:
     post:
-        - if [ -e ./gradlew ]; then ./gradlew jacocoTestReport;else gradle jacocoTestReport;fi
+        - if [ -e ./gradlew ]; then ./gradlew codeCoverageReport;else gradle codeCoverageReport;fi
         - bash <(curl -s https://codecov.io/bash) -t uuid-repo-token

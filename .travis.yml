@@ -12,7 +12,10 @@ before_script:
     - export GRADLE_HOME=$PWD/gradle-4.1
     - export PATH=$GRADLE_HOME/bin:$PATH
 
-test:
-    post:
-        - if [ -e ./gradlew ]; then ./gradlew codeCoverageReport;else gradle codeCoverageReport;fi
-        - bash <(curl -s https://codecov.io/bash) -t uuid-repo-token
+script:
+- ./gradlew assemble
+- ./gradlew check
+- ./gradlew codeCoverageReport
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)

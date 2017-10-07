@@ -7,9 +7,9 @@ jdk:
 - oraclejdk8
 
 before_script:
-    - wget https://services.gradle.org/distributions/gradle-4.12-bin.zip
-    - unzip gradle-4.12-bin.zip
-    - export GRADLE_HOME=$PWD/gradle-4.12
+    - wget https://services.gradle.org/distributions/gradle-4.1-bin.zip
+    - unzip gradle-4.1-bin.zip
+    - export GRADLE_HOME=$PWD/gradle-4.1
     - export PATH=$GRADLE_HOME/bin:$PATH
 
 script:

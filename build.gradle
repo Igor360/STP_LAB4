@@ -13,7 +13,6 @@ sourceSets.test.java.srcDirs = ["src/test"]
 repositories {
     mavenCentral()
     mavenLocal()     
-    jcenter()
 
 }
 

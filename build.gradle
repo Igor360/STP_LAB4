@@ -2,7 +2,6 @@ group 'com.lab4.igor360'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
-apply pligin: 'maven'
 apply plugin: 'jacoco'
 
 sourceCompatibility = 1.8
@@ -12,7 +11,7 @@ sourceSets.test.java.srcDirs = ["src/test"]
 
 repositories {
     mavenCentral()
-    mavenLocal()     
+  
 
 }
 

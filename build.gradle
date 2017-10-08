@@ -6,6 +6,8 @@ apply plugin: 'jacoco'
 
 sourceCompatibility = 1.8
 
+sourceSets.test.java.srcDirs = ["src/test"] 
+
 repositories {
     mavenCentral()
 }
@@ -14,9 +16,22 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 
-task codeCoverageReport(type: JacocoReport) {
-    executionData fileTree(project.rootDir.absolutePath).include("**/build/jacoco/*.exec")
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'ShowMessages'
+        )
+    }
+}
 
+task codeCoverageReport(type: JacocoReport) {
+	def coverageSourceDirs = [
+    'src/main/java',
+]
+    executionData = fileTree(project.rootDir.absolutePath).include("**/build/jacoco/*.exec")
+	classDirectories = fileTree(dir: "${project.buildDir}/classes/java/main")
+	sourceDirectories = files(coverageSourceDirs)
+	
     subprojects.each {
         sourceSets it.sourceSets.main
     }
@@ -40,6 +55,8 @@ jacocoTestReport {
     }
 }
 
+check.dependsOn jacocoTestReport
+
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.14'
+    gradleVersion = '4.1'
 }

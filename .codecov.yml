@@ -1,5 +1,0 @@
-ignore:
-  - .gradle/.*
-  - .idea/.*
-  - docs/.*
-  - gradle/.*
